@@ -1,0 +1,43 @@
+Parameter,Category,Total_Obs,Coverage_All_Pct,Missing_All_Pct,Missing_SetA_Pct,Missing_SetB_Pct,Missing_SetC_Pct,Unrecorded_vs_Zero_Note
+ICUType,Static Descriptor,12000,100.0,0.0,0.0,0.0,0.0,Demographic or admission variable.
+Age,Static Descriptor,12000,100.0,0.0,0.0,0.0,0.0,Demographic or admission variable.
+Height,Static Descriptor,12000,100.0,0.0,0.0,0.0,0.0,Demographic or admission variable.
+Weight,Static Descriptor,386942,100.0,0.0,0.0,0.0,0.0,Demographic or admission variable.
+Gender,Static Descriptor,12000,100.0,0.0,0.0,0.0,0.0,Demographic or admission variable.
+BUN,Serum Chemistry & Renal,41745,98.47,1.53,1.6,1.4,1.58,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Creatinine,Serum Chemistry & Renal,41928,98.47,1.53,1.6,1.4,1.58,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+HR,Core Vital Signs,687134,98.47,1.53,1.58,1.62,1.4,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Temp,Core Vital Signs,259538,98.46,1.54,1.6,1.62,1.4,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+GCS,Neurological Function,185991,98.46,1.54,1.6,1.62,1.4,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+HCT,Hematology,54971,98.42,1.58,1.6,1.5,1.65,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Platelets,Hematology,42650,98.35,1.65,1.7,1.55,1.7,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+HCO3,Serum Chemistry & Renal,40864,98.28,1.72,1.9,1.53,1.75,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Na,Serum Chemistry & Renal,40967,98.23,1.77,1.88,1.58,1.85,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+WBC,Hematology,38908,98.22,1.78,1.83,1.65,1.85,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+K,Serum Chemistry & Renal,43759,97.92,2.08,2.4,1.83,2.0,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Mg,Serum Chemistry & Renal,40905,97.57,2.43,2.58,2.08,2.65,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Glucose,Serum Chemistry & Renal,39355,97.55,2.45,2.83,2.2,2.33,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Urine,Core Vital Signs,411163,97.42,2.58,2.92,2.4,2.42,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+NISysABP,Non-Invasive Hemodynamics,295063,87.6,12.4,12.67,11.65,12.88,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+NIDiasABP,Non-Invasive Hemodynamics,294784,87.38,12.62,12.92,12.05,12.88,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+NIMAP,Non-Invasive Hemodynamics,290496,87.2,12.8,12.98,12.1,13.33,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+pH,Arterial Blood Gas & Ventilation,72207,75.91,24.09,24.0,24.22,24.05,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+PaCO2,Arterial Blood Gas & Ventilation,69048,75.46,24.54,24.42,24.7,24.5,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+PaO2,Arterial Blood Gas & Ventilation,68880,75.45,24.55,24.42,24.72,24.5,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+DiasABP,Invasive Arterial Hemodynamics,440083,70.23,29.77,30.03,29.72,29.57,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+SysABP,Invasive Arterial Hemodynamics,440215,70.23,29.77,30.03,29.72,29.57,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+MAP,Invasive Arterial Hemodynamics,440893,70.07,29.93,30.2,29.85,29.75,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+FiO2,Arterial Blood Gas & Ventilation,95163,67.63,32.37,32.08,32.45,32.58,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+MechVent,Arterial Blood Gas & Ventilation,91644,63.18,36.82,36.78,37.22,36.48,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Lactate,Metabolic & Cardiac Biomarkers,24358,54.8,45.2,45.43,44.62,45.55,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+SaO2,Arterial Blood Gas & Ventilation,23983,44.73,55.27,55.2,56.18,54.43,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Bilirubin,Hepatic Enzymes & Function,9807,43.45,56.55,57.05,56.8,55.8,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+AST,Hepatic Enzymes & Function,9712,43.45,56.55,56.88,56.6,56.18,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+ALT,Hepatic Enzymes & Function,9710,43.44,56.56,56.97,56.62,56.08,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+ALP,Hepatic Enzymes & Function,9441,42.48,57.52,57.75,57.77,57.05,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Albumin,Hepatic Enzymes & Function,7249,40.59,59.41,59.62,59.23,59.38,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+RespRate,Core Vital Signs,165435,27.73,72.27,72.47,71.83,72.5,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+TroponinT,Metabolic & Cardiac Biomarkers,6254,21.98,78.03,78.42,76.45,79.2,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+,Other Clinical,2403,13.28,86.72,100.0,100.0,60.15,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+Cholesterol,Metabolic & Cardiac Biomarkers,995,7.9,92.1,92.38,91.42,92.5,Measurement was unrecorded (sparse testing); must NOT be treated as zero.
+TroponinI,Metabolic & Cardiac Biomarkers,1175,4.71,95.29,94.88,95.47,95.53,Measurement was unrecorded (sparse testing); must NOT be treated as zero.

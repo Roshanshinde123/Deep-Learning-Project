@@ -1,0 +1,43 @@
+Parameter,Category,Total_Observations,Patients_With_Measurement,Patient_Coverage_Pct,Patient_Missing_Pct,Min,Q25,Median,Q75,Max,Mean,Std,Invalid_Outlier_Count,Physiological_Range
+HR,Core Vital Signs,687134,11816,98.47,1.53,0.0,74.0,86.0,97.0,170.0,86.53,17.93,66,"[20, 250]"
+MAP,Invasive Arterial Hemodynamics,440893,8408,70.07,29.93,0.0,69.0,77.0,89.0,285.0,79.85,16.43,649,"[20, 250]"
+SysABP,Invasive Arterial Hemodynamics,440215,8427,70.23,29.77,0.0,102.0,116.0,134.0,263.0,118.94,24.76,1947,"[30, 300]"
+DiasABP,Invasive Arterial Hemodynamics,440083,8427,70.23,29.77,0.0,51.0,58.0,67.0,215.0,59.55,13.19,1993,"[10, 200]"
+Urine,Core Vital Signs,411163,11690,97.42,2.58,0.0,35.0,60.0,125.0,3035.0,112.7,158.26,16,"[0, 5000]"
+Weight,Static Descriptor,386942,12000,100.0,0.0,-1.0,66.6,81.0,95.3,202.0,83.63,23.76,1355,"[20, 450]"
+NISysABP,Non-Invasive Hemodynamics,295063,10512,87.6,12.4,0.0,102.0,117.0,133.0,274.0,118.63,23.55,598,"[30, 300]"
+NIDiasABP,Non-Invasive Hemodynamics,294784,10486,87.38,12.62,0.0,46.0,56.0,67.0,161.0,57.45,15.82,480,"[10, 200]"
+NIMAP,Non-Invasive Hemodynamics,290496,10464,87.2,12.8,0.0,65.0,74.67,86.0,167.0,76.21,15.85,126,"[20, 250]"
+Temp,Core Vital Signs,259538,11815,98.46,1.54,-17.8,36.5,37.1,37.6,40.7,37.01,1.48,298,"[25.0, 43.0]"
+GCS,Neurological Function,185991,11815,98.46,1.54,3.0,8.0,13.0,15.0,15.0,11.37,3.97,0,"[3, 15]"
+RespRate,Core Vital Signs,165435,3328,27.73,72.27,0.0,16.0,19.0,23.0,98.0,19.65,5.52,185,"[4, 80]"
+FiO2,Arterial Blood Gas & Ventilation,95163,8116,67.63,32.37,0.21,0.4,0.5,0.6,1.0,0.54,0.19,0,"[0.21, 1.0]"
+MechVent,Arterial Blood Gas & Ventilation,91644,7581,63.18,36.82,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0,General
+pH,Arterial Blood Gas & Ventilation,72207,9109,75.91,24.09,3.0,7.33,7.38,7.43,100.0,7.39,1.04,21,"[6.7, 7.8]"
+PaCO2,Arterial Blood Gas & Ventilation,69048,9055,75.46,24.54,0.3,35.0,39.0,45.0,100.0,40.35,9.09,5,"[10, 150]"
+PaO2,Arterial Blood Gas & Ventilation,68880,9054,75.45,24.55,0.0,91.0,122.0,176.0,500.0,151.42,90.21,6,"[15, 600]"
+HCT,Hematology,54971,11810,98.42,1.58,9.0,27.3,30.2,33.5,61.2,30.65,4.98,0,"[5, 75]"
+K,Serum Chemistry & Renal,43759,11751,97.92,2.08,1.8,3.7,4.1,4.5,22.9,4.14,0.7,5,"[1.0, 12.0]"
+Platelets,Hematology,42650,11802,98.35,1.65,6.0,119.0,172.0,238.0,1047.0,190.38,105.93,2,"[2, 2000]"
+Creatinine,Serum Chemistry & Renal,41928,11817,98.47,1.53,0.1,0.7,1.0,1.5,22.1,1.5,1.64,0,"[0.1, 30]"
+BUN,Serum Chemistry & Renal,41745,11817,98.47,1.53,0.0,13.0,20.0,33.0,209.0,27.39,23.37,2,"[1, 250]"
+Na,Serum Chemistry & Renal,40967,11788,98.23,1.77,98.0,136.0,139.0,142.0,177.0,139.07,5.15,0,"[90, 185]"
+Mg,Serum Chemistry & Renal,40905,11708,97.57,2.43,0.0,1.8,2.0,2.2,21.0,2.03,0.45,0,General
+HCO3,Serum Chemistry & Renal,40864,11793,98.28,1.72,5.0,20.0,23.0,26.0,50.0,23.1,4.73,0,General
+Glucose,Serum Chemistry & Renal,39355,11706,97.55,2.45,10.0,105.0,127.0,157.0,1143.0,141.23,66.34,3,"[10, 1500]"
+WBC,Hematology,38908,11787,98.22,1.78,0.1,8.3,11.4,15.4,187.5,12.65,7.52,18,"[0.1, 200]"
+Lactate,Metabolic & Cardiac Biomarkers,24358,6576,54.8,45.2,0.3,1.4,2.1,3.6,29.3,2.98,2.57,0,General
+SaO2,Arterial Blood Gas & Ventilation,23983,5368,44.73,55.27,1.06,96.0,97.0,98.0,100.0,96.66,3.47,23,"[50, 100]"
+ICUType,Static Descriptor,12000,12000,100.0,0.0,1.0,2.0,3.0,4.0,4.0,2.78,1.02,0,General
+Height,Static Descriptor,12000,12000,100.0,0.0,-1.0,-1.0,152.4,170.2,462.3,88.16,86.08,5754,"[50, 250]"
+Gender,Static Descriptor,12000,12000,100.0,0.0,-1.0,0.0,1.0,1.0,1.0,0.56,0.5,12,General
+Age,Static Descriptor,12000,12000,100.0,0.0,15.0,53.0,67.0,78.0,90.0,64.53,17.17,0,General
+Bilirubin,Hepatic Enzymes & Function,9807,5214,43.45,56.55,0.0,0.5,0.9,2.4,82.8,2.86,5.77,0,General
+AST,Hepatic Enzymes & Function,9712,5214,43.45,56.55,4.0,30.0,62.0,208.25,36400.0,505.18,1649.0,0,General
+ALT,Hepatic Enzymes & Function,9710,5213,43.44,56.56,1.0,20.25,42.0,147.0,16920.0,362.89,1132.73,0,General
+ALP,Hepatic Enzymes & Function,9441,5097,42.48,57.52,8.0,59.0,82.0,124.0,4695.0,120.09,175.11,0,General
+Albumin,Hepatic Enzymes & Function,7249,4871,40.59,59.41,1.0,2.4,2.9,3.4,5.3,2.89,0.65,0,General
+TroponinT,Metabolic & Cardiac Biomarkers,6254,2637,21.98,78.03,0.01,0.06,0.18,0.89,29.91,1.17,2.79,0,General
+,Other Clinical,2403,1594,13.28,86.72,1.0,2.4,2.9,3.3,8.6,2.87,0.66,0,General
+TroponinI,Metabolic & Cardiac Biomarkers,1175,565,4.71,95.29,0.1,0.9,3.3,11.05,49.6,8.21,10.97,0,General
+Cholesterol,Metabolic & Cardiac Biomarkers,995,948,7.9,92.1,28.0,124.0,153.0,182.5,362.0,155.68,44.44,0,General

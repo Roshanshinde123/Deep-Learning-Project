@@ -1,0 +1,258 @@
+{
+  "model_name": "XGBoost Baseline",
+  "task": "In-Hospital ICU Mortality Risk Prediction",
+  "dataset_dimensions": {
+    "train_patients": 3200,
+    "val_patients": 800,
+    "test_b_patients": 4000,
+    "test_c_patients": 4000,
+    "total_tabular_features": 334
+  },
+  "primary_model_hyperparameters": {
+    "max_depth": 3,
+    "learning_rate": 0.03,
+    "subsample": 0.85,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 2,
+    "gamma": 0.1,
+    "n_estimators": 600,
+    "scale_pos_weight": 6.223476297968397,
+    "objective": "binary:logistic",
+    "eval_metric": "aucpr",
+    "random_state": 42,
+    "tree_method": "hist",
+    "n_jobs": -1,
+    "early_stopping_rounds": 25
+  },
+  "optimal_validation_threshold": 0.58,
+  "primary_model_performance": {
+    "validation": {
+      "default_threshold_0_50": {
+        "threshold": 0.5,
+        "auroc": 0.8982,
+        "auprc": 0.5901,
+        "f1_score": 0.5515,
+        "accuracy": 0.8313,
+        "precision": 0.4368,
+        "recall": 0.7477,
+        "sensitivity": 0.7477,
+        "specificity": 0.8447,
+        "npv": 0.9541,
+        "true_positives": 83,
+        "false_positives": 107,
+        "true_negatives": 582,
+        "false_negatives": 28,
+        "total_positives": 111,
+        "total_negatives": 689
+      },
+      "optimal_threshold": {
+        "threshold": 0.58,
+        "auroc": 0.8982,
+        "auprc": 0.5901,
+        "f1_score": 0.5682,
+        "accuracy": 0.8575,
+        "precision": 0.4902,
+        "recall": 0.6757,
+        "sensitivity": 0.6757,
+        "specificity": 0.8868,
+        "npv": 0.9444,
+        "true_positives": 75,
+        "false_positives": 78,
+        "true_negatives": 611,
+        "false_negatives": 36,
+        "total_positives": 111,
+        "total_negatives": 689
+      }
+    },
+    "test_b_held_out": {
+      "default_threshold_0_50": {
+        "threshold": 0.5,
+        "auroc": 0.8651,
+        "auprc": 0.5416,
+        "f1_score": 0.5279,
+        "accuracy": 0.8157,
+        "precision": 0.4149,
+        "recall": 0.7254,
+        "sensitivity": 0.7254,
+        "specificity": 0.8307,
+        "npv": 0.9481,
+        "true_positives": 412,
+        "false_positives": 581,
+        "true_negatives": 2851,
+        "false_negatives": 156,
+        "total_positives": 568,
+        "total_negatives": 3432
+      },
+      "optimal_threshold": {
+        "threshold": 0.58,
+        "auroc": 0.8651,
+        "auprc": 0.5416,
+        "f1_score": 0.5291,
+        "accuracy": 0.846,
+        "precision": 0.4676,
+        "recall": 0.6092,
+        "sensitivity": 0.6092,
+        "specificity": 0.8852,
+        "npv": 0.9319,
+        "true_positives": 346,
+        "false_positives": 394,
+        "true_negatives": 3038,
+        "false_negatives": 222,
+        "total_positives": 568,
+        "total_negatives": 3432
+      }
+    },
+    "test_c_held_out": {
+      "default_threshold_0_50": {
+        "threshold": 0.5,
+        "auroc": 0.8602,
+        "auprc": 0.5496,
+        "f1_score": 0.522,
+        "accuracy": 0.8155,
+        "precision": 0.4202,
+        "recall": 0.6889,
+        "sensitivity": 0.6889,
+        "specificity": 0.8372,
+        "npv": 0.9402,
+        "true_positives": 403,
+        "false_positives": 556,
+        "true_negatives": 2859,
+        "false_negatives": 182,
+        "total_positives": 585,
+        "total_negatives": 3415
+      },
+      "optimal_threshold": {
+        "threshold": 0.58,
+        "auroc": 0.8602,
+        "auprc": 0.5496,
+        "f1_score": 0.5364,
+        "accuracy": 0.8458,
+        "precision": 0.4786,
+        "recall": 0.6103,
+        "sensitivity": 0.6103,
+        "specificity": 0.8861,
+        "npv": 0.9299,
+        "true_positives": 357,
+        "false_positives": 389,
+        "true_negatives": 3026,
+        "false_negatives": 228,
+        "total_positives": 585,
+        "total_negatives": 3415
+      }
+    }
+  },
+  "comparative_experiments": {
+    "imputation_comparison_48h": {
+      "forward_fill_val_auroc": 0.8982,
+      "forward_fill_val_auprc": 0.5901,
+      "simple_median_val_auroc": 0.8891,
+      "simple_median_val_auprc": 0.5694,
+      "forward_fill_test_b_auroc": 0.8651,
+      "forward_fill_test_b_auprc": 0.5416,
+      "simple_median_test_b_auroc": 0.8632,
+      "simple_median_test_b_auprc": 0.5387
+    },
+    "horizon_comparison_forward_fill": {
+      "48h_val_auroc": 0.8982,
+      "48h_val_auprc": 0.5901,
+      "24h_val_auroc": 0.8407,
+      "24h_val_auprc": 0.4867,
+      "48h_test_b_auroc": 0.8651,
+      "48h_test_b_auprc": 0.5416,
+      "24h_test_b_auroc": 0.8162,
+      "24h_test_b_auprc": 0.4139
+    }
+  },
+  "top_15_features_by_shap": [
+    {
+      "Feature": "GCS_last",
+      "Mean_Abs_SHAP": 0.45110324025154114,
+      "XGB_Gain": 43.84296417236328,
+      "XGB_Weight": 13.0
+    },
+    {
+      "Feature": "Age_scaled",
+      "Mean_Abs_SHAP": 0.19598186016082764,
+      "XGB_Gain": 53.331058502197266,
+      "XGB_Weight": 2.0
+    },
+    {
+      "Feature": "GCS_trend",
+      "Mean_Abs_SHAP": 0.1692395806312561,
+      "XGB_Gain": 29.560754776000977,
+      "XGB_Weight": 8.0
+    },
+    {
+      "Feature": "Urine_mean",
+      "Mean_Abs_SHAP": 0.16580533981323242,
+      "XGB_Gain": 3.7010879516601562,
+      "XGB_Weight": 1.0
+    },
+    {
+      "Feature": "BUN_last",
+      "Mean_Abs_SHAP": 0.13572286069393158,
+      "XGB_Gain": 36.14766311645508,
+      "XGB_Weight": 17.0
+    },
+    {
+      "Feature": "GCS_mean",
+      "Mean_Abs_SHAP": 0.12456799298524857,
+      "XGB_Gain": 50.492576599121094,
+      "XGB_Weight": 8.0
+    },
+    {
+      "Feature": "PaCO2_mean",
+      "Mean_Abs_SHAP": 0.10733996331691742,
+      "XGB_Gain": 0.0,
+      "XGB_Weight": 0.0
+    },
+    {
+      "Feature": "BUN_mean",
+      "Mean_Abs_SHAP": 0.10188974440097809,
+      "XGB_Gain": 0.0,
+      "XGB_Weight": 0.0
+    },
+    {
+      "Feature": "Temp_mean",
+      "Mean_Abs_SHAP": 0.08860670775175095,
+      "XGB_Gain": 0.0,
+      "XGB_Weight": 0.0
+    },
+    {
+      "Feature": "Temp_last",
+      "Mean_Abs_SHAP": 0.0783141553401947,
+      "XGB_Gain": 6.180412292480469,
+      "XGB_Weight": 1.0
+    },
+    {
+      "Feature": "HR_first",
+      "Mean_Abs_SHAP": 0.0718756765127182,
+      "XGB_Gain": 17.56972885131836,
+      "XGB_Weight": 3.0
+    },
+    {
+      "Feature": "RespRate_min",
+      "Mean_Abs_SHAP": 0.07142014056444168,
+      "XGB_Gain": 21.830215454101562,
+      "XGB_Weight": 2.0
+    },
+    {
+      "Feature": "Na_trend",
+      "Mean_Abs_SHAP": 0.07001180946826935,
+      "XGB_Gain": 0.0,
+      "XGB_Weight": 0.0
+    },
+    {
+      "Feature": "HR_last",
+      "Mean_Abs_SHAP": 0.06907332688570023,
+      "XGB_Gain": 22.461584091186523,
+      "XGB_Weight": 3.0
+    },
+    {
+      "Feature": "Temp_min",
+      "Mean_Abs_SHAP": 0.06284482777118683,
+      "XGB_Gain": 13.752578735351562,
+      "XGB_Weight": 1.0
+    }
+  ]
+}

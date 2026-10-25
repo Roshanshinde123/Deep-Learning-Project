@@ -1,0 +1,66 @@
+{
+  "dataset_title": "PhysioNet / Computing in Cardiology Challenge 2012",
+  "clinical_objective": "In-Hospital Mortality Risk Prediction from First 48 Hours",
+  "partitions": {
+    "set_a": {
+      "directory": "Dataset/set-a",
+      "outcomes_file": "Dataset/Outcomes-a.txt",
+      "patient_count": 4000,
+      "observation_count": 1757980,
+      "duplicate_timestamp_collisions": 3744,
+      "survivors": 3446,
+      "deaths": 554,
+      "mortality_rate_pct": 13.850000000000001,
+      "role": "Official Development / Training Partition"
+    },
+    "set_b": {
+      "directory": "Dataset/set-b",
+      "outcomes_file": "Dataset/Outcomes-b.txt",
+      "patient_count": 4000,
+      "observation_count": 1762535,
+      "duplicate_timestamp_collisions": 3961,
+      "survivors": 3432,
+      "deaths": 568,
+      "mortality_rate_pct": 14.2,
+      "role": "Official Competition Test / Leaderboard Evaluation Partition"
+    },
+    "set_c": {
+      "archive": "Dataset/set-c.tar.gz",
+      "outcomes_file": "Dataset/Outcomes-c.txt",
+      "patient_count": 4000,
+      "observation_count": 1765303,
+      "duplicate_timestamp_collisions": 4087,
+      "survivors": 3415,
+      "deaths": 585,
+      "mortality_rate_pct": 14.625,
+      "role": "Official Final Evaluation / Held-Out Challenge Partition"
+    },
+    "combined_all_partitions": {
+      "total_patient_records": 12000,
+      "total_unique_patient_ids": 12000,
+      "total_observations": 5285818,
+      "total_duplicate_collisions": 11792,
+      "total_survivors": 10293,
+      "total_deaths": 1707,
+      "overall_mortality_rate_pct": 14.224999999999998,
+      "imbalance_ratio": "1 : 6.03"
+    }
+  },
+  "phase1_directory_explanation": {
+    "path": "Dataset/phase1",
+    "contents": "Archival copy of early competition Phase 1 data (set-a, set-b archives and folders)",
+    "key_discrepancy": "Phase 1 files lack the ICUType variable (added in Phase 2 final challenge release). Root set-a and set-b are the updated final versions."
+  },
+  "temporal_characteristics": {
+    "timestamp_format": "HH:MM (elapsed hours and minutes since ICU admission)",
+    "time_range_minutes": [
+      0,
+      2880
+    ],
+    "time_range_hours": [
+      0,
+      48
+    ],
+    "observations_beyond_48h": 0
+  }
+}

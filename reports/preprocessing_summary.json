@@ -1,0 +1,239 @@
+{
+  "pipeline_status": "Complete & Audited",
+  "dataset_dimensions": {
+    "N_total_patients": 12000,
+    "training_patients": 3200,
+    "validation_patients": 800,
+    "test_b_patients": 4000,
+    "test_c_patients": 4000,
+    "time_steps_48h": 48,
+    "time_steps_24h": 24,
+    "num_dynamic_features": 37,
+    "num_static_features_encoded": 9,
+    "num_concatenated_channels_48h": 74,
+    "num_concatenated_channels_24h": 74
+  },
+  "imputation_experiments": {
+    "method_a": "Simple Imputation (Train population medians)",
+    "method_b": "Historical Forward-Fill (LOCF + Train median leading fill)"
+  },
+  "shapes": {
+    "X_train_48": [
+      3200,
+      48,
+      37
+    ],
+    "X_train_48_with_mask": [
+      3200,
+      48,
+      74
+    ],
+    "X_val_48": [
+      800,
+      48,
+      37
+    ],
+    "X_val_48_with_mask": [
+      800,
+      48,
+      74
+    ],
+    "X_test_b_48": [
+      4000,
+      48,
+      37
+    ],
+    "X_test_b_48_with_mask": [
+      4000,
+      48,
+      74
+    ],
+    "X_test_c_48": [
+      4000,
+      48,
+      37
+    ],
+    "X_test_c_48_with_mask": [
+      4000,
+      48,
+      74
+    ],
+    "X_train_24": [
+      3200,
+      24,
+      37
+    ],
+    "X_train_24_with_mask": [
+      3200,
+      24,
+      74
+    ],
+    "X_val_24": [
+      800,
+      24,
+      37
+    ],
+    "X_val_24_with_mask": [
+      800,
+      24,
+      74
+    ],
+    "X_test_b_24": [
+      4000,
+      24,
+      37
+    ],
+    "X_test_b_24_with_mask": [
+      4000,
+      24,
+      74
+    ],
+    "X_test_c_24": [
+      4000,
+      24,
+      37
+    ],
+    "X_test_c_24_with_mask": [
+      4000,
+      24,
+      74
+    ],
+    "static_train_48": [
+      3200,
+      9
+    ],
+    "static_val_48": [
+      800,
+      9
+    ],
+    "static_test_b_48": [
+      4000,
+      9
+    ],
+    "static_test_c_48": [
+      4000,
+      9
+    ],
+    "static_train_24": [
+      3200,
+      9
+    ],
+    "static_val_24": [
+      800,
+      9
+    ],
+    "static_test_b_24": [
+      4000,
+      9
+    ],
+    "static_test_c_24": [
+      4000,
+      9
+    ],
+    "y_train": [
+      3200
+    ],
+    "y_val": [
+      800
+    ],
+    "y_test_b": [
+      4000
+    ],
+    "y_test_c": [
+      4000
+    ]
+  },
+  "feature_names": {
+    "dynamic_37": [
+      "ALP",
+      "ALT",
+      "AST",
+      "Albumin",
+      "BUN",
+      "Bilirubin",
+      "Cholesterol",
+      "Creatinine",
+      "DiasABP",
+      "FiO2",
+      "GCS",
+      "Glucose",
+      "HCO3",
+      "HCT",
+      "HR",
+      "K",
+      "Lactate",
+      "MAP",
+      "MechVent",
+      "Mg",
+      "NIDiasABP",
+      "NIMAP",
+      "NISysABP",
+      "Na",
+      "PaCO2",
+      "PaO2",
+      "Platelets",
+      "RespRate",
+      "SaO2",
+      "SysABP",
+      "Temp",
+      "TroponinI",
+      "TroponinT",
+      "Urine",
+      "WBC",
+      "Weight",
+      "pH"
+    ],
+    "static_9": [
+      "Age_scaled",
+      "Height_scaled",
+      "Weight_admission_scaled",
+      "Gender",
+      "MechVent_ever_recorded",
+      "ICUType_CCU",
+      "ICUType_CSRU",
+      "ICUType_MedICU",
+      "ICUType_SurgICU"
+    ]
+  },
+  "missingness_before_imputation_pct": 79.75546171171172,
+  "missingness_after_imputation_pct": 0.0,
+  "cleaning_statistics": {
+    "blank_parameter_lines_dropped": 2403,
+    "outliers_filtered_to_nan": {
+      "Weight": 1355,
+      "NIDiasABP": 480,
+      "NISysABP": 598,
+      "DiasABP": 1993,
+      "SysABP": 1947,
+      "MAP": 649,
+      "RespRate": 185,
+      "Temp": 298,
+      "PaO2": 6,
+      "HR": 66,
+      "NIMAP": 126,
+      "pH": 21,
+      "Height": 56,
+      "SaO2": 23,
+      "K": 5,
+      "Urine": 16,
+      "PaCO2": 5,
+      "BUN": 2,
+      "Mg": 8,
+      "WBC": 18,
+      "Glucose": 3,
+      "Platelets": 2,
+      "Weight_admission": 4,
+      "Lactate": 1
+    },
+    "invalid_timestamps_dropped": 0
+  },
+  "data_leakage_guarantees": {
+    "patient_overlap_between_splits": 0,
+    "scalers_fit_on_train_only": true,
+    "medians_fit_on_train_only": true,
+    "target_variables_in_features": false,
+    "future_leakage_in_LOCF": false,
+    "mechvent_unstandardized_binary": true,
+    "icup_type_one_hot_encoded": true
+  }
+}

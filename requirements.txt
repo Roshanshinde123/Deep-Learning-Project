@@ -1,0 +1,24 @@
+# Agentic AI-Assisted ICU Mortality Prediction
+# Requirements & Dependencies Specification
+
+# Streamlit Interactive Dashboard
+streamlit>=1.35.0,<=1.61.1
+
+# Machine Learning & Deep Learning
+xgboost>=2.0.0,<=3.4.1
+torch>=2.0.0
+keras>=3.0.0,<=3.15.1
+
+# Model Explainability
+shap>=0.45.0,<=0.54.1
+
+# Core Scientific & Data Processing
+pandas>=2.0.0,<=2.3.3
+numpy>=1.26.0,<=2.3.5
+scikit-learn>=1.4.0,<=1.8.0
+joblib>=1.3.0,<=1.5.2
+
+# Visualizations & Plotting
+plotly>=5.20.0,<=6.3.0
+matplotlib>=3.8.0,<=3.10.8
+seaborn>=0.12.0

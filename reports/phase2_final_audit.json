@@ -1,0 +1,93 @@
+{
+  "audit_title": "Phase 2 Final Technical Audit & Preprocessing Verification (Refined)",
+  "audit_timestamp": "2026-10-23",
+  "audit_status": "Passed (100% of 8 Tests Succeeded)",
+  "corrections_implemented": {
+    "1_weight_feature": {
+      "empirical_findings": {
+        "weight_at_00_00": "3,674 patients (91.8% in Set A)",
+        "weight_after_00_00": "2,723 patients (68.1% in Set A)",
+        "weight_only_at_00_00": "981 patients (24.5% in Set A)",
+        "weight_at_both_00_00_and_after": "2,693 patients (67.3% in Set A)",
+        "weight_only_after_00_00": "30 patients (0.8% in Set A)",
+        "no_valid_weight": "296 patients (7.4% in Set A)"
+      },
+      "investigation_dual_representation": "The measurement recorded at 00:00 is present in both static descriptor (Weight_admission) and in Hour 0 of dynamic Weight time series.",
+      "justification_and_collinearity_mitigation": {
+        "sequential_models": "In LSTM/CNN architectures, retaining Hour 0 weight ensures continuous time-series trajectories for tracking acute fluid accumulation.",
+        "tabular_models_xgboost": "To prevent unintended duplicate weighting and multicollinearity in tree models, tabular feature extraction (Phase 3/4) must extract net delta (W_last - W_adm), fluctuation (W_max - W_min), and observation frequency rather than naive repetitive aggregations (min, max, mean, first, last) which duplicate static admission weight for 92% of patients."
+      }
+    },
+    "2_missingness_mask_integration": {
+      "finding": "Deep learning architectures (LSTM, 1D-CNN) require explicit indication of observed vs imputed values to avoid false confidence on imputed signals.",
+      "correction": "Generated 74-channel integrated temporal tensors (37 values + 37 observation indicators) for 48h and 24h, alongside 37-channel value-only arrays, 37-channel mask-only arrays, and 72-channel comparison tensors.",
+      "shapes_generated": {
+        "48h_integrated": "(N, 48, 74)",
+        "24h_integrated": "(N, 24, 74)",
+        "48h_values_only": "(N, 48, 37)",
+        "24h_values_only": "(N, 24, 37)",
+        "48h_masks_only": "(N, 48, 37)",
+        "24h_masks_only": "(N, 24, 37)",
+        "48h_comparison_72": "(N, 48, 72)"
+      }
+    },
+    "3_mechanical_ventilation": {
+      "empirical_findings": "100% of recorded entries are 1.0 (procedural check). 63.1% of patients have at least one entry.",
+      "clinical_limitations": "Absent records represent unrecorded status, NOT confirmed non-ventilation. In MIMIC-II ICU workflows, nurses log ventilator checks as procedural events rather than recording negative confirmations. Furthermore, extubation timestamps are unrecorded, meaning persistent ventilation until discharge cannot be verified.",
+      "standardization_exemption": "MechVent is strictly excluded from continuous StandardScaler and preserved in binary {0.0, 1.0}.",
+      "no_automatic_forward_fill": "MechVent is NOT forward-filled to discharge across unrecorded hours. In the hourly grid, MechVent has value 1.0 only when an explicit ventilator check was logged in that hour; unrecorded hours remain 0.0 with mask 0.0.",
+      "patient_level_indicator": "Added MechVent_ever_recorded to static features (1.0 if ever recorded in the observation window, 0.0 otherwise). For 24-hour prediction, computed strictly within the first 24 hours (m <= 1440), guaranteeing zero future leakage."
+    },
+    "4_categorical_features": {
+      "finding": "Treating ICUType (1=CCU, 2=CSRU, 3=MedICU, 4=SurgICU) as continuous imposed false ordinal scaling.",
+      "correction": "One-Hot Encoded ICUType into 4 binary columns (ICUType_CCU, ICUType_CSRU, ICUType_MedICU, ICUType_SurgICU) with sum=1.0 per patient. Gender encoded as binary {0.0, 1.0}. Static array expanded to 9 features (3 standardized continuous + 6 binary)."
+    },
+    "5_time_boundary_validation": {
+      "binning_rule": "Hour 23 covers [1380, 1440] minutes (includes exactly 24:00). Hour 47 covers [2820, 2880] minutes (includes exactly 48:00).",
+      "guarantees": "Slicing hours 0..23 strictly guarantees zero observations after 24 hours. Hours 0..47 strictly guarantee zero observations after 48 hours. Observations > 2880 minutes are rejected as None."
+    },
+    "6_imputation_method_b_confirmation": {
+      "correction": "Confirmed Method B as Historical Forward-Fill (LOCF) with Training-Set Population Median for Leading Missing Values.",
+      "directionality": "Strictly forward along time axis (hours 0 -> 47). Zero backward-fill from future observations (zero temporal leakage).",
+      "terminology_fix": "Replaced misleading term 'backfill' across all reports and code documentation with 'training-set population median imputation for leading missing values'."
+    },
+    "7_outcome_label_provenance": {
+      "set_a": "Official development dataset released with published outcomes during the 2012 Challenge.",
+      "sets_b_and_c": "Official test sets whose outcomes were withheld during the competition and released post-challenge by PhysioNet as academic benchmark keys.",
+      "zero_leakage_guarantee": "Neither Set B nor Set C outcomes are ever accessed or used during model training, feature selection, imputer fitting, scaler fitting, or hyperparameter tuning. Used exclusively for final out-of-sample evaluation."
+    }
+  },
+  "dataset_dimensions": {
+    "total_patients": 12000,
+    "train_patients": 3200,
+    "val_patients": 800,
+    "test_b_patients": 4000,
+    "test_c_patients": 4000,
+    "num_dynamic_features": 37,
+    "num_static_features_48h": 9,
+    "num_static_features_24h": 9,
+    "num_concatenated_channels_48h": 74,
+    "num_concatenated_channels_24h": 74
+  },
+  "static_features_list": [
+    "Age_scaled",
+    "Height_scaled",
+    "Weight_admission_scaled",
+    "Gender",
+    "MechVent_ever_recorded",
+    "ICUType_CCU",
+    "ICUType_CSRU",
+    "ICUType_MedICU",
+    "ICUType_SurgICU"
+  ],
+  "validation_test_suite_results": {
+    "test_1_time_boundary": "PASS",
+    "test_2_weight_static_and_dynamic": "PASS",
+    "test_3_mechvent_no_forward_fill_and_patient_indicator": "PASS",
+    "test_4_static_one_hot_and_binary_encoding": "PASS",
+    "test_5_mask_integration_74_and_72_channels": "PASS",
+    "test_6_historical_forward_fill_zero_backward_fill": "PASS",
+    "test_7_patient_isolation_zero_leakage": "PASS",
+    "test_8_numerical_integrity_and_label_mapping": "PASS"
+  }
+}

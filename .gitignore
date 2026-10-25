@@ -1,0 +1,119 @@
+# ==============================================================================
+# Git Ignore Configuration - ICU Mortality Risk Prediction Project
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Datasets & Large Preprocessed Arrays (1.8 GB PhysioNet 2012 Data)
+# ------------------------------------------------------------------------------
+# Full raw dataset folder containing thousands of patient records and archives
+Dataset/
+Dataset/*
+
+# Preprocessed NumPy binary tensors, arrays, and matrix archives (>1.4 GB)
+*.npy
+*.npz
+data/raw/
+data/processed/**/*.npy
+data/processed/**/*.npz
+
+# Whitelist essential small scalers, feature metadata, and dataset documentation
+!data/README.md
+!data/processed/**/scaler_*.joblib
+!data/processed/**/tabular_feature_metadata.json
+!data/processed/**/feature_names.json
+
+# ------------------------------------------------------------------------------
+# 2. Python Environment & Compilation Artifacts
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# 3. Testing & Coverage
+# ------------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+htmlcov/
+
+# ------------------------------------------------------------------------------
+# 4. Jupyter & Notebook Checkpoints
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# ------------------------------------------------------------------------------
+# 5. IDE & Editor Files
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------------------------
+# 6. Operating System Specific
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ------------------------------------------------------------------------------
+# 7. Secrets, Environment Variables & Credentials
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+client_secret.json
+
+# ------------------------------------------------------------------------------
+# 8. Temporary Logs & Runtime Files
+# ------------------------------------------------------------------------------
+*.log
+logs/
+temp/
+tmp/
